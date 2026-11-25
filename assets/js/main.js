@@ -48,7 +48,7 @@
       io.unobserve(e.target);
     });
   }, { threshold: .15, rootMargin: '0px 0px -6% 0px' }) : null;
-  $$('[data-reveal], .tier, .ring-card, .reg, .clock, [data-count]').forEach(function (el) {
+  $$('[data-reveal], .tier, .ring-card, .reg, .clock, .tl, [data-count]').forEach(function (el) {
     if (io) io.observe(el); else { el.classList.add('in'); if (el.hasAttribute('data-count')) countUp(el); }
   });
 

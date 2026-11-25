@@ -1,0 +1,42 @@
+# Parvathi Vrushabha HR Solution LLP — Apache / cPanel settings
+Options -Indexes
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+
+# --- Force HTTPS + www (canonical host) ---------------------------------
+# Un-comment the lines below AFTER the SSL certificate (AutoSSL / Let's Encrypt)
+# is active for the domain in cPanel, otherwise visitors will see a certificate error.
+#<IfModule mod_rewrite.c>
+#RewriteEngine On
+#RewriteCond %{HTTPS} !=on
+#RewriteCond %{HTTP:X-Forwarded-Proto} !https
+#RewriteRule ^ https://www.parvathivrushabha.com%{REQUEST_URI} [L,R=301]
+#RewriteCond %{HTTP_HOST} ^parvathivrushabha\.com$ [NC]
+#RewriteRule ^ https://www.parvathivrushabha.com%{REQUEST_URI} [L,R=301]
+#</IfModule>
+
+# --- Compression --------------------------------------------------------
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json application/ld+json image/svg+xml text/plain application/xml
+</IfModule>
+
+# --- Browser caching ----------------------------------------------------
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/png "access plus 1 year"
+ExpiresByType image/webp "access plus 1 year"
+ExpiresByType image/jpeg "access plus 1 year"
+ExpiresByType image/x-icon "access plus 1 year"
+ExpiresByType text/css "access plus 1 month"
+ExpiresByType application/javascript "access plus 1 month"
+ExpiresByType text/html "access plus 10 minutes"
+</IfModule>
+
+# --- Basic security headers --------------------------------------------
+<IfModule mod_headers.c>
+Header always set X-Content-Type-Options "nosniff"
+Header always set X-Frame-Options "SAMEORIGIN"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+AddType application/manifest+json .webmanifest

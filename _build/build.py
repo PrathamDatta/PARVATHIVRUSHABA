@@ -150,13 +150,16 @@ def header(path):
     def cur(p): return ' aria-current="page"' if (path == p or (p != "/" and path.startswith(p))) else ""
     lis = []
     for p, n in NAV:
-        if p == "/services/":
+        if p == "/about/":
+            sub = f'<a href="/about/">{ic("building")}Our story</a><a href="/about/entrepreneurial-legacy/">{ic("star")}Entrepreneurial legacy</a>'
+            lis.append(f'<li class="has-sub"><a class="nl" href="{p}"{cur(p)}>{n}{ic("chevron")}</a><div class="sub">{sub}</div></li>')
+        elif p == "/services/":
             sub = "".join(f'<a href="/services/{s["slug"]}/">{ic(s["icon"])}{esc(s["short"])}</a>' for s in SERVICES)
             lis.append(f'<li class="has-sub"><a class="nl" href="{p}"{cur(p)}>{n}{ic("chevron")}</a><div class="sub">{sub}</div></li>')
         else:
             lis.append(f'<li><a class="nl" href="{p}"{cur(p)}>{n}</a></li>')
     return f'''<header class="site-header"><div class="container nav-wrap">
-<a class="brand" href="/" aria-label="{NAME} — home"><img src="/assets/img/logo.webp" width="50" height="50" alt="{NAME} logo"><span><b>PARVATHI VRUSHABHA</b><small>HR Solution LLP</small></span></a>
+<a class="brand" href="/" aria-label="{NAME} — home"><img src="/assets/img/logo.webp" width="50" height="50" alt="{NAME} logo"><span><b>PARVATHI VRUSHABHA</b><small>HR Solution LLP</small><em class="slogan-mini">{TAG}</em></span></a>
 <nav class="nav" id="site-nav" aria-label="Main"><ul>{"".join(lis)}</ul><span class="nav-cta"><a class="btn sm" href="/contact/">Get a free quote {ic("arrow","go")}</a></span></nav>
 <button class="burger" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span></button>
 </div></header>'''
@@ -166,7 +169,7 @@ def footer():
     links = "".join(f'<li><a href="{p}">{n}</a></li>' for p, n in NAV)
     return f'''<footer class="site-footer"><div class="container">
 <div class="foot-grid">
-<div><div class="foot-brand"><img src="/assets/img/logo.webp" width="64" height="64" alt="" loading="lazy"><div><b>PARVATHI VRUSHABHA</b><small>HR Solution LLP</small></div></div>
+<div><div class="foot-brand"><img src="/assets/img/logo.webp" width="64" height="64" alt="" loading="lazy"><div><b>PARVATHI VRUSHABHA</b><small>HR Solution LLP</small><small class="slg">{TAG}</small></div></div>
 <p>{TAG} Bengaluru-based manpower, staffing &amp; placement, facility management, payroll and HR audit partner.</p></div>
 <div><h4>Explore</h4><ul>{links}</ul></div>
 <div><h4>Services</h4><ul>{svc}</ul></div>
@@ -183,7 +186,7 @@ def footer():
 def org_schema():
     return {
         "@type": ["Organization", "EmploymentAgency"], "@id": SITE + "/#org", "name": NAME, "legalName": NAME, "alternateName": "Parvathi Vrushabha HR Solution",
-        "url": SITE + "/", "logo": SITE + "/assets/img/icon-512.png", "image": SITE + "/assets/img/og-image.jpg", "slogan": TAG,
+        "url": SITE + "/", "logo": SITE + "/assets/img/icon-512.png", "image": SITE + "/assets/img/og-image.jpg", "slogan": TAG, "foundingDate": "2026", "founder": {"@id": SITE + "/about/entrepreneurial-legacy/#anithadevi"},
         "description": "Bengaluru-based HR and workforce solutions company offering manpower services, staffing and placement, campus recruitment, facility management and housekeeping, payroll management, HR audits and statutory compliance support.",
         "email": E1, "telephone": [P1T, P2T],
         "address": {"@type": "PostalAddress", "streetAddress": "No. 112, Raju Layout Main Road, 3rd Cross, Opp. Devaraj Urs Road, Nagadevanahalli, Jnanabharathi Post",
@@ -298,6 +301,59 @@ def reg_html():
     chk = '<svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="12.5"/><path d="M8.5 14.5l4 4 7-8"/></svg>'
     return '<ul class="reg">' + "".join(f'<li style="--i:{i}">{chk}<span>{esc(r)}</span></li>' for i, r in enumerate(REGISTRATIONS)) + '</ul>'
 
+
+def leader_strip():
+    return f"""<section class="section tint-lime" id="leadership"><div class="container"><div class="split"><div{R(0, "left")}><p class="eyebrow">Entrepreneurial legacy</p>
+<h2>Led by entrepreneurs who <span class="hl">build to last</span></h2>
+<p class="lead">Founded in 2026 by Anithadevi E, with the guidance of Mr. Eshwarappa, an entrepreneur with over 30 years of business experience in Bengaluru.</p>
+<div class="btn-row" style="margin-top:22px"><a class="btn green" href="/about/entrepreneurial-legacy/">Read our legacy {ic("arrow","go")}</a></div></div>
+<div class="grid" style="gap:16px">
+<a class="card lead-card" href="/about/entrepreneurial-legacy/#anithadevi"{R(1, "right")} style="display:flex;gap:20px;align-items:center;text-decoration:none;color:inherit"><span class="avatar">AE</span><span><b style="font-family:var(--head);font-size:1.25rem;display:block">Anithadevi E</b><span style="color:var(--ink-2)">Entrepreneur &amp; Designated Director</span></span></a>
+<a class="card lead-card" href="/about/entrepreneurial-legacy/#eshwarappa"{R(2, "right")} style="display:flex;gap:20px;align-items:center;text-decoration:none;color:inherit"><span class="avatar g">E</span><span><b style="font-family:var(--head);font-size:1.25rem;display:block">Mr. Eshwarappa</b><span style="color:var(--ink-2)">Additional Designated Director</span></span></a>
+</div></div></div></section>"""
+
+
+def legacy_page():
+    trail = [("Home", "/"), ("About us", "/about/"), ("Entrepreneurial legacy", None)]
+    body = page_hero(trail, 'An entrepreneurial legacy, <span class="hl">built on trust</span>',
+                     f"{NAME} is an emerging manpower, staffing, recruitment, placement and HR audit outsourcing company established in 2026 — guided by leadership with over 30 years of entrepreneurial experience in Bengaluru.",
+                     f'<a class="btn" href="/contact/">Talk to us {ic("arrow","go")}</a><a class="btn ghost" href="/about/">Our story</a>')
+    body += f"""<section class="section"><div class="container">
+<div class="panel profile" id="anithadevi"{R(0, "left")}><span class="avatar">AE</span><div>
+<span class="role">Entrepreneur &amp; Designated Director</span><h2 style="font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:12px">Anithadevi E</h2>
+<div class="quals"><span>B.Com</span><span>DMLT</span><span>Financial advisory consultant</span></div>
+<p>Anithadevi E is the Entrepreneur and Designated Director of ParvathiVrushabha HR Solution LLP, an emerging manpower, staffing, recruitment, placement and HR audit outsourcing company established in 2026.</p>
+<p>Driven by a clear vision to establish a reliable and integrated workforce management partner, she founded ParvathiVrushabha with a commitment to delivering dependable manpower solutions, professional recruitment and manpower placement services, and comprehensive HR audit support. Her approach is built on the core values of reliability, transparency, professionalism and consistent service quality.</p>
+<p>She is also a financial advisory consultant and pursued the Company Secretary programme under the Institute of Company Secretaries of India (ICSI) during 2014–2015, which was subsequently discontinued.</p>
+<p style="margin:0">As the driving force behind ParvathiVrushabha, Anithadevi provides direction, leads the company's vision and drives its strategic development, supported by the valuable guidance and business leadership of her father and husband.</p></div></div>
+<div class="panel profile" id="eshwarappa" style="margin-top:26px"{R(1, "right")}><span class="avatar g">E</span><div>
+<span class="role">Additional Designated Director</span><h2 style="font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:12px">Mr. Eshwarappa</h2>
+<div class="quals"><span>Transport &amp; travels entrepreneur</span><span>Est. 1996</span><span>30+ years in Bengaluru</span></div>
+<p>Mr. Eshwarappa, father of Anithadevi E, serves as the Additional Designated Director of ParvathiVrushabha HR Solution LLP.</p>
+<p>He is an established entrepreneur in the public transport and travel industry, having established his own transport and travels business in 1996. With over 30 years of entrepreneurial experience in Bengaluru, he brings extensive market knowledge, business acumen, operational expertise and valuable leadership guidance to the organization.</p>
+<p style="margin:0">His entrepreneurial journey, business experience and commitment to building sustainable business operations provide a strong foundation for the organization's growth and long-term vision.</p></div></div>
+</div></section>
+<section class="section tint-warm"><div class="container"><div class="section-head center"{R()}><p class="eyebrow">The journey</p><h2>From a transport business to a <span class="hl">workforce partner</span></h2></div>
+<div class="tl">
+<div class="tl-item"{R(0, "right")}><span class="tl-year">1996</span><h3>A business is born</h3><p>Mr. Eshwarappa establishes his own transport and travels business in Bengaluru's public transport and travel industry.</p></div>
+<div class="tl-item"{R(1, "right")}><span class="tl-year">30+ years</span><h3>Decades of enterprise</h3><p>Over thirty years of entrepreneurial experience in Bengaluru build market knowledge, business acumen and operational expertise.</p></div>
+<div class="tl-item"{R(2, "right")}><span class="tl-year">2026</span><h3>ParvathiVrushabha is established</h3><p>Anithadevi E founds {NAME} with a vision of a reliable, integrated workforce management partner.</p></div></div></div></section>
+<section class="section"><div class="container"><div class="section-head center"{R()}><p class="eyebrow">Founding principles</p><h2>The values behind <span class="hl">every placement</span></h2></div>
+<div class="grid g4">
+<div class="tile"{R(0)}>{ic("shield")}<div><b>Reliability</b><small>Dependable manpower and service delivery.</small></div></div>
+<div class="tile"{R(1)}>{ic("eye")}<div><b>Transparency</b><small>Trust through openness with clients and employees.</small></div></div>
+<div class="tile"{R(2)}>{ic("briefcase")}<div><b>Professionalism</b><small>Professional recruitment, placement and HR audit support.</small></div></div>
+<div class="tile"{R(3)}>{ic("star")}<div><b>Consistent quality</b><small>The same standard of service, every engagement.</small></div></div></div></div></section>"""
+    body += cta_band("Work with a team built on trust.", "Tell us about your manpower, placement or HR audit needs and we'll respond with a customized proposal.")
+    persons = [
+        {"@type": "Person", "@id": SITE + "/about/entrepreneurial-legacy/#anithadevi", "name": "Anithadevi E", "jobTitle": "Entrepreneur & Designated Director", "worksFor": {"@id": SITE + "/#org"},
+         "description": "Entrepreneur and Designated Director of Parvathi Vrushabha HR Solution LLP; financial advisory consultant."},
+        {"@type": "Person", "@id": SITE + "/about/entrepreneurial-legacy/#eshwarappa", "name": "Mr. Eshwarappa", "jobTitle": "Additional Designated Director", "worksFor": {"@id": SITE + "/#org"},
+         "description": "Established entrepreneur in the public transport and travel industry since 1996, with over 30 years of entrepreneurial experience in Bengaluru."}]
+    return page("/about/entrepreneurial-legacy/", "Entrepreneurial Legacy: Anithadevi E & Mr. Eshwarappa | Parvathi Vrushabha",
+                "Meet the leadership of Parvathi Vrushabha HR Solution LLP: Anithadevi E, Entrepreneur & Designated Director, and Mr. Eshwarappa, Additional Designated Director with 30+ years in Bengaluru.",
+                body, trail, persons)
+
 # ================================================================ PAGES
 def home():
     words = ["Manpower", "Staffing", "Placement", "Audits"]
@@ -308,7 +364,7 @@ def home():
 <div class="ring r1"><span class="node n1">{ic("cap")}</span><span class="node n2">{ic("users")}</span><span class="node n3">{ic("building")}</span><span class="node n4">{ic("rupee")}</span></div>
 <div class="core"><img src="/assets/img/logo.webp" width="320" height="320" alt="{NAME} logo" fetchpriority="high"></div>
 <span class="chip-float cf1">Campus Recruitment</span><span class="chip-float cf2">Facility Management</span><span class="chip-float cf3">Payroll &amp; Compliance</span><span class="chip-float cf4">Skilled · Semi-skilled · Unskilled</span>
-</div></div>'''
+</div><p class="slogan-line"><span>{TAG}</span></p></div>'''
     hero = f'''<section class="hero"><span class="leaf a" aria-hidden="true"></span><span class="leaf b" aria-hidden="true"></span><span class="blob" style="width:260px;height:260px;left:-80px;bottom:40px;background:rgba(201,242,91,.35)" aria-hidden="true"></span>
 <div class="container hero-grid"><div>
 <p class="eyebrow"{R()}>Bengaluru · HR &amp; Workforce Solutions LLP</p>
@@ -363,7 +419,7 @@ def home():
 <p class="lead">We believe people are the foundation of every successful organization. Our commitment is to connect the right talent with the right opportunities while helping businesses build productive and reliable teams.</p>
 <div class="btn-row" style="margin-top:20px"><a class="btn" href="/about/">About us {ic("arrow","go")}</a></div></div><ul class="strengths" style="list-style:none;padding:0;margin:0">{strengths}</ul></div></div></section>'''
     faq = f'''<section class="section" id="faq"><div class="container"><div class="section-head center"{R()}><p class="eyebrow">FAQ</p><h2>Quick answers</h2></div>{faq_html(FAQ_GENERAL, True)}</div></section>'''
-    body = hero + stats + marquee + services + process + wheel + tiers + industries + why + faq + cta_band()
+    body = hero + stats + marquee + services + process + wheel + tiers + industries + why + leader_strip() + faq + cta_band()
     return page("/", "Manpower, Staffing & HR Solutions in Bengaluru | Parvathi Vrushabha",
                 "Bengaluru HR & workforce solutions LLP: manpower supply, staffing & placement, campus recruitment, housekeeping & facility management, payroll, HR audits and EPF/ESI compliance.",
                 body, extra=[faq_schema(FAQ_GENERAL)])
@@ -387,7 +443,7 @@ def about():
 <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(190px,1fr))">{ring_html}</div></div></section>
 <section class="section"><div class="container"><div class="section-head center"{R()}><p class="eyebrow">Strengths</p><h2>What clients can count on</h2></div><ul class="strengths" style="list-style:none;padding:0;margin:0 auto;max-width:820px">{"".join(f'<li class="strength"{R(i % 3)}><b>{esc(s)}</b></li>' for i, s in enumerate(STRENGTHS))}</ul></div></section>
 <section class="section tint-lime"><div class="container"><div class="panel center" style="max-width:900px;margin:auto"{R(0, "zoom")}><p class="eyebrow" style="justify-content:center">Our commitment</p><p class="big" style="font-family:var(--head);font-size:clamp(1.3rem,2.4vw,1.8rem);line-height:1.35;font-weight:600">We are committed to delivering dependable HR and workforce solutions through quality service, professional ethics and customer satisfaction — building strong relationships, creating employment opportunities and supporting organizations in achieving their business goals.</p></div></div></section>'''
-    body += cta_band()
+    body += leader_strip() + cta_band()
     return page("/about/", "About Parvathi Vrushabha HR Solution LLP | Bengaluru HR Company",
                 "Meet Parvathi Vrushabha HR Solution LLP — a Bengaluru HR and workforce solutions company. Our vision, mission, ten core values and strengths in staffing, payroll and compliance.",
                 body, [("Home", "/"), ("About us", None)])
@@ -569,7 +625,7 @@ def not_found():
 # ================================================================ run
 PAGES = [("/", home())]
 PAGES += [("/about/", about()), ("/services/", services_page())] + [(f"/services/{s['slug']}/", service_page(s["slug"])) for s in SERVICES]
-PAGES += [("/industries/", industries_page()), ("/compliance/", compliance_page()), ("/careers/", careers_page()), ("/contact/", contact_page()), ("/404.html", not_found())]
+PAGES += [("/about/entrepreneurial-legacy/", legacy_page()), ("/industries/", industries_page()), ("/compliance/", compliance_page()), ("/careers/", careers_page()), ("/contact/", contact_page()), ("/404.html", not_found())]
 for p, c in PAGES: write(p, c)
 
 prio = {"/": "1.0", "/services/": "0.9", "/contact/": "0.8", "/about/": "0.8"}
@@ -589,6 +645,8 @@ with open(os.path.join(ROOT, "llms.txt"), "w") as f:
 
 ## Key facts
 - Legal name: {NAME}
+- Established: 2026
+- Leadership: Anithadevi E (Entrepreneur & Designated Director); Mr. Eshwarappa (Additional Designated Director, transport & travels entrepreneur since 1996)
 - Location: {ADDR_ONE}
 - Phone / WhatsApp: {P1}, {P2}
 - Email: {E1}, {E2}
@@ -603,6 +661,7 @@ with open(os.path.join(ROOT, "llms.txt"), "w") as f:
 ## Pages
 - [Home]({SITE}/): Overview of services, process and FAQs
 - [About us]({SITE}/about/): Vision, mission, ten core values, strengths
+- [Entrepreneurial legacy]({SITE}/about/entrepreneurial-legacy/): Founder and director profiles, company established 2026
 - [Services]({SITE}/services/): All four service lines
 - [Industries]({SITE}/industries/): Nine industries served
 - [Registrations & Compliance]({SITE}/compliance/): Registrations maintained (subject to applicability and validity) and statutory support (EPF, ESI, PT, LWF, contract labour, factory, gratuity, bonus)
