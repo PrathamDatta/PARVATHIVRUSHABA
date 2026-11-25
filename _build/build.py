@@ -8,7 +8,7 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 SITE = "https://www.parvathivrushabha.com"
 TODAY = datetime.date.today().isoformat()
 NAME = "Parvathi Vrushabha HR Solution LLP"
-SHORT = "Parvathi Vrushabha"
+SHORT = "Parvathi Vrushabha HR Solution LLP"
 TAG = "Strength in Service, Grace in Growth."
 P1, P2 = "+91 70261 99239", "+91 73531 88999"
 P1T, P2T = "+917026199239", "+917353188999"
@@ -131,7 +131,7 @@ STRENGTHS = ["Customized manpower and staffing solutions", "Skilled, semi-skille
 FAQ_GENERAL = [
  ("What does Parvathi Vrushabha HR Solution LLP do?",
   "Parvathi Vrushabha HR Solution LLP is a Bengaluru-based HR and workforce solutions company. We provide manpower services, staffing and placement, campus recruitment, facility management and housekeeping, payroll management, HR audits and statutory compliance support."),
- ("Where is Parvathi Vrushabha HR Solution located?",
+ ("Where is Parvathi Vrushabha HR Solution LLP located?",
   f"Our office is at {ADDR_ONE}. You can reach us on {P1} or {P2}, or email {E1}."),
  ("What types of manpower do you provide?",
   "We provide skilled, semi-skilled and unskilled manpower, including machine operators, technicians, production workers, helpers, drivers, housekeeping staff and office support staff, for industries such as manufacturing, retail, FMCG, logistics, pharmaceutical and healthcare, and hospitality."),
@@ -159,7 +159,7 @@ def header(path):
         else:
             lis.append(f'<li><a class="nl" href="{p}"{cur(p)}>{n}</a></li>')
     return f'''<header class="site-header"><div class="container nav-wrap">
-<a class="brand" href="/" aria-label="{NAME} — home"><img src="/assets/img/logo.webp" width="50" height="50" alt="{NAME} logo"><span><b>PARVATHI VRUSHABHA</b><small>HR Solution LLP</small><em class="slogan-mini">{TAG}</em></span></a>
+<a class="brand" href="/" aria-label="{NAME} — home"><img src="/assets/img/logo.webp" width="50" height="50" alt="{NAME} logo"><span><b>Parvathi Vrushabha <span>HR Solution LLP</span></b><em class="slogan-mini">{TAG}</em></span></a>
 <nav class="nav" id="site-nav" aria-label="Main"><ul>{"".join(lis)}</ul><span class="nav-cta"><a class="btn sm" href="/contact/">Get a free quote {ic("arrow","go")}</a></span></nav>
 <button class="burger" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span></button>
 </div></header>'''
@@ -169,7 +169,7 @@ def footer():
     links = "".join(f'<li><a href="{p}">{n}</a></li>' for p, n in NAV)
     return f'''<footer class="site-footer"><div class="container">
 <div class="foot-grid">
-<div><div class="foot-brand"><img src="/assets/img/logo.webp" width="64" height="64" alt="" loading="lazy"><div><b>PARVATHI VRUSHABHA</b><small>HR Solution LLP</small><small class="slg">{TAG}</small></div></div>
+<div><div class="foot-brand"><img src="/assets/img/logo.webp" width="64" height="64" alt="" loading="lazy"><div><b>Parvathi Vrushabha HR Solution LLP</b><small class="slg">{TAG}</small></div></div>
 <p>{TAG} Bengaluru-based manpower, staffing &amp; placement, facility management, payroll and HR audit partner.</p></div>
 <div><h4>Explore</h4><ul>{links}</ul></div>
 <div><h4>Services</h4><ul>{svc}</ul></div>
@@ -322,14 +322,14 @@ def legacy_page():
 <div class="panel profile" id="anithadevi"{R(0, "left")}><span class="avatar">AE</span><div>
 <span class="role">Entrepreneur &amp; Designated Director</span><h2 style="font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:12px">Anithadevi E</h2>
 <div class="quals"><span>B.Com</span><span>DMLT</span><span>Financial advisory consultant</span></div>
-<p>Anithadevi E is the Entrepreneur and Designated Director of ParvathiVrushabha HR Solution LLP, an emerging manpower, staffing, recruitment, placement and HR audit outsourcing company established in 2026.</p>
-<p>Driven by a clear vision to establish a reliable and integrated workforce management partner, she founded ParvathiVrushabha with a commitment to delivering dependable manpower solutions, professional recruitment and manpower placement services, and comprehensive HR audit support. Her approach is built on the core values of reliability, transparency, professionalism and consistent service quality.</p>
+<p>Anithadevi E is the Entrepreneur and Designated Director of Parvathi Vrushabha HR Solution LLP, an emerging manpower, staffing, recruitment, placement and HR audit outsourcing company established in 2026.</p>
+<p>Driven by a clear vision to establish a reliable and integrated workforce management partner, she founded Parvathi Vrushabha HR Solution LLP with a commitment to delivering dependable manpower solutions, professional recruitment and manpower placement services, and comprehensive HR audit support. Her approach is built on the core values of reliability, transparency, professionalism and consistent service quality.</p>
 <p>She is also a financial advisory consultant and pursued the Company Secretary programme under the Institute of Company Secretaries of India (ICSI) during 2014–2015, which was subsequently discontinued.</p>
-<p style="margin:0">As the driving force behind ParvathiVrushabha, Anithadevi provides direction, leads the company's vision and drives its strategic development, supported by the valuable guidance and business leadership of her father and husband.</p></div></div>
+<p style="margin:0">As the driving force behind Parvathi Vrushabha HR Solution LLP, Anithadevi provides direction, leads the company's vision and drives its strategic development, supported by the valuable guidance and business leadership of her father and husband.</p></div></div>
 <div class="panel profile" id="eshwarappa" style="margin-top:26px"{R(1, "right")}><span class="avatar g">E</span><div>
 <span class="role">Additional Designated Director</span><h2 style="font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:12px">Mr. Eshwarappa</h2>
 <div class="quals"><span>Transport &amp; travels entrepreneur</span><span>Est. 1996</span><span>30+ years in Bengaluru</span></div>
-<p>Mr. Eshwarappa, father of Anithadevi E, serves as the Additional Designated Director of ParvathiVrushabha HR Solution LLP.</p>
+<p>Mr. Eshwarappa, father of Anithadevi E, serves as the Additional Designated Director of Parvathi Vrushabha HR Solution LLP.</p>
 <p>He is an established entrepreneur in the public transport and travel industry, having established his own transport and travels business in 1996. With over 30 years of entrepreneurial experience in Bengaluru, he brings extensive market knowledge, business acumen, operational expertise and valuable leadership guidance to the organization.</p>
 <p style="margin:0">His entrepreneurial journey, business experience and commitment to building sustainable business operations provide a strong foundation for the organization's growth and long-term vision.</p></div></div>
 </div></section>
@@ -337,7 +337,7 @@ def legacy_page():
 <div class="tl">
 <div class="tl-item"{R(0, "right")}><span class="tl-year">1996</span><h3>A business is born</h3><p>Mr. Eshwarappa establishes his own transport and travels business in Bengaluru's public transport and travel industry.</p></div>
 <div class="tl-item"{R(1, "right")}><span class="tl-year">30+ years</span><h3>Decades of enterprise</h3><p>Over thirty years of entrepreneurial experience in Bengaluru build market knowledge, business acumen and operational expertise.</p></div>
-<div class="tl-item"{R(2, "right")}><span class="tl-year">2026</span><h3>ParvathiVrushabha is established</h3><p>Anithadevi E founds {NAME} with a vision of a reliable, integrated workforce management partner.</p></div></div></div></section>
+<div class="tl-item"{R(2, "right")}><span class="tl-year">2026</span><h3>Parvathi Vrushabha HR Solution LLP is established</h3><p>Anithadevi E founds {NAME} with a vision of a reliable, integrated workforce management partner.</p></div></div></div></section>
 <section class="section"><div class="container"><div class="section-head center"{R()}><p class="eyebrow">Founding principles</p><h2>The values behind <span class="hl">every placement</span></h2></div>
 <div class="grid g4">
 <div class="tile"{R(0)}>{ic("shield")}<div><b>Reliability</b><small>Dependable manpower and service delivery.</small></div></div>
@@ -350,7 +350,7 @@ def legacy_page():
          "description": "Entrepreneur and Designated Director of Parvathi Vrushabha HR Solution LLP; financial advisory consultant."},
         {"@type": "Person", "@id": SITE + "/about/entrepreneurial-legacy/#eshwarappa", "name": "Mr. Eshwarappa", "jobTitle": "Additional Designated Director", "worksFor": {"@id": SITE + "/#org"},
          "description": "Established entrepreneur in the public transport and travel industry since 1996, with over 30 years of entrepreneurial experience in Bengaluru."}]
-    return page("/about/entrepreneurial-legacy/", "Entrepreneurial Legacy: Anithadevi E & Mr. Eshwarappa | Parvathi Vrushabha",
+    return page("/about/entrepreneurial-legacy/", "Entrepreneurial Legacy: Anithadevi E & Mr. Eshwarappa | Parvathi Vrushabha HR Solution LLP",
                 "Meet the leadership of Parvathi Vrushabha HR Solution LLP: Anithadevi E, Entrepreneur & Designated Director, and Mr. Eshwarappa, Additional Designated Director with 30+ years in Bengaluru.",
                 body, trail, persons)
 
@@ -358,7 +358,7 @@ def legacy_page():
 def home():
     words = ["Manpower", "Staffing", "Placement", "Audits"]
     ring_text = "   •   ".join(words) + "   •   "
-    orbit = f'''<div class="hero-visual"{R(2, "zoom")}><div class="orbit" role="img" aria-label="Parvathi Vrushabha logo surrounded by service icons: recruitment, manpower, facility management and payroll">
+    orbit = f'''<div class="hero-visual"{R(2, "zoom")}><div class="orbit" role="img" aria-label="Parvathi Vrushabha HR Solution LLP logo surrounded by service icons: recruitment, manpower, facility management and payroll">
 <span class="ring r3"></span><span class="ring r2"></span>
 <svg class="textring" viewBox="0 0 400 400" aria-hidden="true"><defs><path id="tp" d="M200,200 m-176,0 a176,176 0 1,1 352,0 a176,176 0 1,1 -352,0"/></defs><text><textPath href="#tp" textLength="1096" lengthAdjust="spacing">{"MANPOWER  •  STAFFING  •  PLACEMENT  •  AUDITS  •  "}</textPath></text></svg>
 <div class="ring r1"><span class="node n1">{ic("cap")}</span><span class="node n2">{ic("users")}</span><span class="node n3">{ic("building")}</span><span class="node n4">{ic("rupee")}</span></div>
@@ -420,7 +420,7 @@ def home():
 <div class="btn-row" style="margin-top:20px"><a class="btn" href="/about/">About us {ic("arrow","go")}</a></div></div><ul class="strengths" style="list-style:none;padding:0;margin:0">{strengths}</ul></div></div></section>'''
     faq = f'''<section class="section" id="faq"><div class="container"><div class="section-head center"{R()}><p class="eyebrow">FAQ</p><h2>Quick answers</h2></div>{faq_html(FAQ_GENERAL, True)}</div></section>'''
     body = hero + stats + marquee + services + process + wheel + tiers + industries + why + leader_strip() + faq + cta_band()
-    return page("/", "Manpower, Staffing & HR Solutions in Bengaluru | Parvathi Vrushabha",
+    return page("/", "Manpower, Staffing & HR Solutions in Bengaluru | Parvathi Vrushabha HR Solution LLP",
                 "Bengaluru HR & workforce solutions LLP: manpower supply, staffing & placement, campus recruitment, housekeeping & facility management, payroll, HR audits and EPF/ESI compliance.",
                 body, extra=[faq_schema(FAQ_GENERAL)])
 
@@ -435,7 +435,7 @@ def about():
 <p>We specialize in manpower services, staffing-placement, campus recruitment, facility management, payroll management, HR audits and statutory compliance support. We provide skilled, semi-skilled and unskilled manpower to meet the diverse workforce requirements of our clients.</p>
 <p>With industry knowledge, professional expertise and a customer-focused approach, we deliver efficient and quality HR solutions. Our services go beyond recruitment, focusing on employee welfare, retention, training, workplace safety and effective workforce management.</p>
 <p>We believe that people are the foundation of every successful organization. Our commitment is to connect the right talent with the right opportunities while helping businesses build productive and reliable teams.</p>
-<p>At Parvathi Vrushabha, we value trust, transparency, quality service and long-term relationships with our clients and employees.</p>
+<p>At Parvathi Vrushabha HR Solution LLP, we value trust, transparency, quality service and long-term relationships with our clients and employees.</p>
 <p><strong>Our goal is simple — to connect the right people with the right organizations and empower businesses through effective workforce solutions.</strong></p></div>
 <div class="panel center"{R(1, "right")}><img src="/assets/img/logo.webp" width="220" height="220" alt="{NAME} emblem" style="margin:0 auto 18px;animation:bob 6s ease-in-out infinite" loading="lazy"><p style="font-family:var(--head);font-size:1.6rem;font-weight:800;line-height:1.15;margin-bottom:6px"><span class="hl">{TAG}</span></p><p style="color:var(--ink-3);margin:0">Manpower · Staffing-Placement · Facility Management · HR Audits</p></div></div></div></section>
 <section class="section tint-warm"><div class="container"><div class="vm"><div class="card v"{R(0, "left")}><div class="icon-badge g">{ic("eye")}</div><p class="eyebrow">Our vision</p><p class="big">To become a trusted and preferred HR, Staffing and Facility Management solutions partner by creating employment opportunities, developing workforce capabilities and supporting sustainable business growth.</p></div>
@@ -462,13 +462,13 @@ def services_page():
                      "Campus recruitment, specialized manpower, facility management and housekeeping, payroll management and HR compliance — customized to your business.")
     body += f'<div class="subnav"><div class="container">{sub}</div></div><div class="container">{rows}</div>' + cta_band("Not sure which service fits?", "Share your requirement and we'll recommend the right combination.")
     sch = [{"@type": "ItemList", "name": "Services", "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": s["name"], "url": f"{SITE}/services/{s['slug']}/"} for i, s in enumerate(SERVICES)]}]
-    return page("/services/", "HR, Manpower & Facility Management Services in Bengaluru | Parvathi Vrushabha",
+    return page("/services/", "HR, Manpower & Facility Management Services in Bengaluru | Parvathi Vrushabha HR Solution LLP",
                 "Explore our services: campus recruitment, skilled & unskilled manpower, housekeeping & facility management, payroll processing and HR compliance for businesses in Bengaluru.",
                 body, [("Home", "/"), ("Services", None)], sch)
 
 SVC_DETAIL = {
  "campus-recruitment-placement": dict(
-   title="Campus Recruitment & Placement Services in Bengaluru | Parvathi Vrushabha",
+   title="Campus Recruitment & Placement Services in Bengaluru | Parvathi Vrushabha HR Solution LLP",
    desc="Structured campus recruitment: college partnerships, candidate screening and assessments, on-campus, virtual and hybrid drives, interviews and onboarding support in Bengaluru.",
    h1='Campus recruitment that brings <span class="hl">fresh talent</span> to your team',
    lead="Structured campus recruitment programs that connect your organization with fresh talent from colleges and educational institutions.",
@@ -478,7 +478,7 @@ SVC_DETAIL = {
         ("Do you run virtual or hybrid campus drives?", "Yes. We run on-campus, virtual and hybrid recruitment drives, with candidate screening, assessments, interview coordination, selection and onboarding support."),
         ("Can colleges partner with you for placements?", "Yes. We build college partnerships and maintain campus placement and institutional agreements. Colleges can contact us at " + E2 + " or " + P2 + ".")]),
  "manpower-workforce-solutions": dict(
-   title="Manpower Supply & Staffing Services in Bengaluru | Parvathi Vrushabha",
+   title="Manpower Supply & Staffing Services in Bengaluru | Parvathi Vrushabha HR Solution LLP",
    desc="Skilled, semi-skilled and unskilled manpower supplier in Bengaluru for manufacturing, retail, FMCG, logistics, pharma, healthcare and hospitality. Operators, technicians, drivers and helpers.",
    h1='Reliable manpower for <span class="hl">every operational need</span>',
    lead="Skilled, semi-skilled and unskilled manpower to support the operational requirements of manufacturing, retail, logistics, healthcare, hospitality and more.",
@@ -488,7 +488,7 @@ SVC_DETAIL = {
         ("Which industries do you support with manpower?", "Manufacturing and engineering, retail and FMCG, logistics and supply chain, pharmaceutical and healthcare, hospitality, warehousing and distribution, commercial establishments and service industries."),
         ("Can you also manage payroll for deployed staff?", "Yes. Our payroll management and HR compliance services cover salary administration, EPF, ESI, Professional Tax and Labour Welfare Fund support, so staffing and payroll can sit with one partner.")]),
  "facility-management-housekeeping": dict(
-   title="Housekeeping & Facility Management Services in Bengaluru | Parvathi Vrushabha",
+   title="Housekeeping & Facility Management Services in Bengaluru | Parvathi Vrushabha HR Solution LLP",
    desc="Industrial and commercial housekeeping and facility management in Bengaluru: office maintenance, skilled and unskilled workforce deployment, attendance and shift coordination.",
    h1='Housekeeping &amp; facility management, <span class="hl">tailored to your site</span>',
    lead="Customized housekeeping and facility management solutions designed around the specific requirements of your premises and operations.",
@@ -498,7 +498,7 @@ SVC_DETAIL = {
         ("Is the service customized to my premises?", "Yes. Every solution is based on the specific requirements of the client — site type, scope, shifts and headcount."),
         ("Do you manage attendance and shifts?", "Yes. Attendance and shift management coordination is part of our facility management service.")]),
  "payroll-hr-compliance": dict(
-   title="Payroll, HR Audit & EPF/ESI Compliance Services in Bengaluru | Parvathi Vrushabha",
+   title="Payroll, HR Audit & EPF/ESI Compliance Services in Bengaluru | Parvathi Vrushabha HR Solution LLP",
    desc="Payroll processing, HR outsourcing, HR audits, background verification and EPF, ESI, Professional Tax, LWF, contract labour and factory compliance support in Bengaluru.",
    h1='Payroll &amp; HR compliance <span class="hl">without the headaches</span>',
    lead="Support for HR operations, payroll activities and statutory compliance, so your team can focus on running the business.",
@@ -553,14 +553,14 @@ def industries_page():
                      "From factory floors and warehouses to hotels, hospitals and offices — we supply the people and the HR support each industry depends on.")
     body += f'<div class="marquee"><div class="marquee-track">{marq}{marq}</div></div><section class="section"><div class="container"><div class="grid g3">{cards}</div></div></section>'
     body += cta_band("Don't see your industry listed?", "Our solutions are customized. Tell us about your workforce challenge and we'll design a plan around it.")
-    return page("/industries/", "Industries We Serve: Manufacturing, Retail, Logistics, Healthcare | Parvathi Vrushabha",
+    return page("/industries/", "Industries We Serve: Manufacturing, Retail, Logistics, Healthcare | Parvathi Vrushabha HR Solution LLP",
                 "Workforce, staffing and HR services for manufacturing & engineering, retail & FMCG, logistics, pharma/healthcare, hospitality, facility management, warehousing and more in Bengaluru.",
                 body, [("Home", "/"), ("Industries", None)],
                 [{"@type": "ItemList", "name": "Industries we serve", "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": x[1]} for i, x in enumerate(INDUSTRIES)]}])
 
 def compliance_page():
     audit = steps_html([("file", "Document review", "Review HR records and policies."), ("scale", "Statutory check", "Check against applicable labour laws."), ("search", "Gap report", "Clear list of gaps and risks."), ("clipboard", "Corrective plan", "Practical, prioritized fixes."), ("users", "Implementation", "Support in closing the gaps."), ("shield", "Ongoing monitoring", "Stay compliant going forward.")])
-    faq = [("Which registrations does Parvathi Vrushabha maintain?", "We maintain the applicable business registrations and statutory compliance documentation required for our operations, including LLP incorporation, PAN, GST, Shops & Commercial Establishments, EPF, ESI, Professional Tax and MSME / Udyam registrations, plus Contract Labour Licence and labour law registrations as applicable. Documentation is available on request, subject to applicability and current validity."),
+    faq = [("Which registrations does Parvathi Vrushabha HR Solution LLP maintain?", "We maintain the applicable business registrations and statutory compliance documentation required for our operations, including LLP incorporation, PAN, GST, Shops & Commercial Establishments, EPF, ESI, Professional Tax and MSME / Udyam registrations, plus Contract Labour Licence and labour law registrations as applicable. Documentation is available on request, subject to applicability and current validity."),
            ("Can you help us with EPF, ESI and Professional Tax?", "Yes. We provide EPF, ESI, Professional Tax and Labour Welfare Fund support as part of our Payroll Management & HR Compliance services."),
            ("Do you handle contract labour and factory compliance?", "We coordinate contract labour and factory compliance requirements for clients, alongside gratuity, bonus and employee benefits administration.")]
     body = page_hero([("Home", "/"), ("Registrations & Compliance", None)], 'Compliance you can <span class="hl">trust and verify</span>',
@@ -572,14 +572,14 @@ def compliance_page():
 <section class="section tint-aqua"><div class="container"><div class="section-head center"{R()}><p class="eyebrow">HR audits</p><h2>How an HR audit works</h2><p class="lead">A clear path from review to ongoing compliance.</p></div>{audit}</div></section>
 <section class="section"><div class="container"><div class="section-head center"{R()}><p class="eyebrow">FAQ</p><h2>Compliance questions</h2></div>{faq_html(faq, True)}</div></section>'''
     body += cta_band("Need a compliance health check?", "Ask us about an HR audit or statutory compliance support for your organization.", "Payroll%20%26%20HR%20compliance")
-    return page("/compliance/", "Registrations & Statutory Compliance (EPF, ESI, PT, LWF) | Parvathi Vrushabha",
+    return page("/compliance/", "Registrations & Statutory Compliance (EPF, ESI, PT, LWF) | Parvathi Vrushabha HR Solution LLP",
                 "Parvathi Vrushabha HR Solution LLP maintains applicable registrations — PAN, GST, EPF, ESI, PT, MSME — and supports clients with EPF, ESI, PT, LWF, contract labour and factory compliance.",
                 body, [("Home", "/"), ("Registrations & Compliance", None)], [faq_schema(faq)])
 
 def careers_page():
     steps = steps_html([("mail", "Share your CV", "Email or WhatsApp your updated CV."), ("search", "Profile review", "We review skills, experience and preferences."), ("clipboard", "Assessment / interview", "Screening, trade test or interview."), ("briefcase", "Placement", "Placement with a suitable organization."), ])
     cats = ["Machine operators", "Technicians", "Production workers", "Helpers", "Drivers", "Housekeeping staff", "Office support staff", "Freshers & graduates"]
-    faq = [("How can I apply for a job through Parvathi Vrushabha?", f"Send your updated CV to {E2} or WhatsApp it to {P1}. Our team reviews your profile and contacts you about suitable openings."),
+    faq = [("How can I apply for a job through Parvathi Vrushabha HR Solution LLP?", f"Send your updated CV to {E2} or WhatsApp it to {P1}. Our team reviews your profile and contacts you about suitable openings."),
            ("What kind of jobs do you place candidates in?", "We place skilled, semi-skilled and unskilled candidates in roles such as machine operators, technicians, production workers, helpers, drivers, housekeeping and office support, across manufacturing, retail, FMCG, logistics, pharmaceutical, healthcare and hospitality."),
            ("I am a college. How can we partner with you?", f"We run campus recruitment programs and campus placement partnerships. Write to {E2} or call {P2} to start a conversation.")]
     body = page_hero([("Home", "/"), ("Careers & Placement", None)], 'Find the right opportunity, <span class="hl">find the right fit</span>',
@@ -592,8 +592,8 @@ def careers_page():
 <div class="panel"{R(1, "right")}><div class="icon-badge g">{ic("building")}</div><h3>For employers</h3><p>Need people? Tell us your roles, volumes and location and we'll propose a customized staffing plan.</p><a class="more" href="/contact/">Request manpower {ic("arrow")}</a></div></div></div></section>
 <section class="section"><div class="container"><div class="section-head center"{R()}><p class="eyebrow">FAQ</p><h2>Careers &amp; placement questions</h2></div>{faq_html(faq, True)}</div></section>'''
     body += cta_band("Ready to get started?", "Send your CV or call our team — we'll take it from there.")
-    return page("/careers/", "Jobs & Placement in Bengaluru | Parvathi Vrushabha HR Solution",
-                "Job seekers and freshers: share your CV with Parvathi Vrushabha for placement in manufacturing, retail, logistics, pharma, healthcare and hospitality roles in Bengaluru.",
+    return page("/careers/", "Jobs & Placement in Bengaluru | Parvathi Vrushabha HR Solution LLP",
+                "Job seekers and freshers: share your CV with Parvathi Vrushabha HR Solution LLP for placement in manufacturing, retail, logistics, pharma, healthcare and hospitality roles in Bengaluru.",
                 body, [("Home", "/"), ("Careers & Placement", None)], [faq_schema(faq)])
 
 def contact_page():

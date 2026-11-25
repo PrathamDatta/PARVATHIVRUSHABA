@@ -516,3 +516,5 @@ form.form { background: #fff; border: 1px solid var(--line); border-radius: 24px
 .btn { white-space: nowrap; }
 .nav a.nl { padding: 10px 11px; }
 @media (max-width: 920px) { .nav a.nl { padding: 14px 16px; } }
+
+.brand b span { display: block; font-size: .82rem; font-weight: 700; letter-spacing: 0; margin-top: 1px; }
